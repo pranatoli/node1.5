@@ -25,7 +25,6 @@ app.use(bodyParser.json())
 
 app.get('/users', function (req, res) {
     res.send(users)
-    console.log(users);
 })
 
 app.get('/users/:id', function (req, res) {
@@ -73,7 +72,6 @@ app.delete('/users/:id', function (req, res) {
         if (id != -1) {
             const updateUser = users.map((i) => (i.id == req.params.id ? i = {} : i))
             users.splice(0, users.length, ...updateUser)
-            console.log(users)
             res.send('user is deleted')
 
         }
